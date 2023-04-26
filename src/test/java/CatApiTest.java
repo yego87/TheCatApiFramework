@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.*;
 public class CatApiTest {
 
     @Test
-    public void testCase_1() {
+    public void testCase_1() throws Exception {
         // 1. Выполняем GET запрос к /images/search
         List<Map<String, Object>> breeds = given(SpecBuilder.getRequestSpec()).param("limit=20")
                 .when().get("/breeds/").as(new TypeRef<>() {});
@@ -52,7 +52,7 @@ public class CatApiTest {
     }
 
     @Test
-    public void testCase_2() {
+    public void testCase_2() throws Exception {
         // 1. Выполняем GET запрос к /categories
         given(SpecBuilder.getRequestSpec())
                 .when().get("/categories")
